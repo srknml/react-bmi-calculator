@@ -16,19 +16,25 @@ export const Container = styled.div`
     & ul {
         list-style: none;
     }
-  
+    & h1 {
+        text-align: center;
+        margin: 0;
+    }
+    & p {
+        text-align: center;
+        font-size: 20px;
+    }
 `;
 export const List = styled.ul`
     padding: 0 8px;
-    
 `;
 export const Item = styled.li`
-&:nth-child(odd) {
-    background-color: rgb(236, 219, 143);
-}
-&:nth-child(even) {
-    background-color: rgb(236, 133, 228);
-}
+    &:nth-child(odd) {
+        background-color: rgb(236, 219, 143);
+    }
+    &:nth-child(even) {
+        background-color: rgb(236, 133, 228);
+    }
 `;
 
 export const ItemContainer = styled.div`
@@ -36,8 +42,6 @@ export const ItemContainer = styled.div`
     justify-content: space-between;
     align-items: center;
     padding: 8px;
-    
-    
 `;
 
 export const ItemText = styled.p`

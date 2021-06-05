@@ -3,21 +3,26 @@ import { DataItem } from "./DataItem";
 import { Button } from "../Form/styles";
 import { useHistory } from "react-router";
 import { Container, List, Item } from "./styles";
-const History = (props) => {
+const History = ({ removeData, data }) => {
     const history = useHistory();
-    console.log(props)
     return (
         <Container>
-            <h1 style={{ textAlign: "center", margin: "0" }}> Data</h1>
-            <List>
-                {props.data.map((data) => {
-                    return (
-                        <Item key={data.id}>
-                            <DataItem {...data} removeData={props.removeData} />
-                        </Item>
-                    );
-                })}
-            </List>
+            <h1> Data</h1>
+
+            {data.length !== 0 ? (
+                <List>
+                    {data.map((data) => {
+                        return (
+                            <Item key={data.id}>
+                                <DataItem {...data} removeData={removeData} />
+                            </Item>
+                        );
+                    })}
+                </List>
+            ) : (
+                <p> There is no data. </p>
+            )}
+
             <Button style={{ width: 250 }} onClick={() => history.push("/")}>
                 {" "}
                 Home{" "}
